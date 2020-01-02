@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cassert>
-
 namespace Math
 {
 	class Fraction
@@ -11,12 +9,9 @@ namespace Math
 		int m_denominator;
 
 	public:
-		explicit Fraction(int numerator = 0, int denominator = 1) : m_numerator{numerator}
-		{
-			assert(denominator != 0);
-
-			m_denominator = denominator;
-		}
+		explicit Fraction();
+		explicit Fraction(int numerator);
+		Fraction(int numerator, int denominator);
 
 		[[nodiscard]] int getNumerator() const;
 		void setNumerator(int numerator);
